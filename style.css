@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.main_container{
+    display: flex;
+    align-content:space-between;
+    /* justify-content:space-between; */
+    gap: 25px;
+    /* flex-wrap: wrap; */
+    padding: 20px;
+}
+.container{
+    display: flex;
+   flex-direction: column;
+    /* border: 2px solid black; */
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+    border-radius: 5px;
+    gap: 5px;
+    /* background-color: aliceblue; */
+    min-height: 50vh;
+    
+
+}
+.box_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* margin-left: 50px; */
+}
+.todo_items{
+   display: flex;
+   flex-direction: column;
+   background: #f4f4f4;
+   border: 2px solid rgb(189, 189, 189);
+   /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+   padding: 12px;
+   border-radius: 5px;
+   width: 400px;
+   min-height: 80vh;
+   gap: 10px;
+   flex-shrink: 0;
+}
+.tasks{
+    background:white;
+    color: black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+    cursor:grab;
+}
+
+
+.inputbox{
+    display: flex;
+    justify-content: start;
+}
+.inputbox input{
+    width: 90%;
+    padding: 10px;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.inputbox button{
+    width: 10%;
+    /* padding: 10px; */
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.box_title .count{
+    font-size: 25px;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    margin-left: 10px;
+    background-color: rgb(200, 200, 200);
+    background-size: 100px 100px;
+    border-radius: 100% 100%;
+    padding: 5px;
+    /* margin-left: 50px; */
+}
+
+
+.is-dragging{
+    scale: 1.05;
+    transform:scale(1.1);
+    transition: all 0.9s ease-in-out;
+    cursor:grabbing;
+
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: rgb(50, 50, 50);
+    color: white; */
+    background: rgb(213, 213, 213);
+    color: rgb(50, 50, 50);
+    border-top: 5px solid rgba(0, 8, 255, 0.5);
+}
