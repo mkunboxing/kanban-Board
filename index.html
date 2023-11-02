@@ -60,65 +60,9 @@
             </div>
         </div>
     </div>
-<!-- <script src="gpt.js"></script> -->
     <script src="util.js"></script>
     <script src="script.js"></script>
     <script src="add.js"></script>
-    <script>
-        // Function to update the count for a specific container
-        function updateCount(containerId) {
-            const container = document.getElementById(containerId);
-            const tasks = container.getElementsByClassName("tasks");
-            const countElement = container.querySelector(".count");
-            countElement.textContent = tasks.length;
-        }
-    
-        // Add event listeners to input boxes for each container
-        document.getElementById("todo_add").addEventListener("click", function() {
-            const todoInput = document.getElementById("todo_input");
-            const taskText = todoInput.value;
-            if (taskText) {
-                const todoList = document.getElementById("todo_list");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                todoList.appendChild(newTask);
-                todoInput.value = "";
-                updateCount("todo_list"); // Update the count for the "todo_list" container
-            }
-        });
-    
-        document.getElementById("p_add").addEventListener("click", function() {
-            const pInput = document.getElementById("p_input");
-            const taskText = pInput.value;
-            if (taskText) {
-                const progressList = document.getElementById("progress");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                progressList.appendChild(newTask);
-                pInput.value = "";
-                updateCount("progress"); // Update the count for the "progress" container
-            }
-        });
-    
-        document.getElementById("done_add").addEventListener("click", function() {
-            const doneInput = document.getElementById("done_input");
-            const taskText = doneInput.value;
-            if (taskText) {
-                const doneList = document.getElementById("done");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                doneList.appendChild(newTask);
-                doneInput.value = "";
-                updateCount("done"); // Update the count for the "done" container
-            }
-        });
-    </script>
 </body>
 
 </html>
