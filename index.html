@@ -1,124 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="main_container">
-        <div class="container">
-            <div class="todo_items" id="todo_list">
-                <div class="box_title todo_title"> TODO
-                    <span id="todo_count" class="count">0</span>
-                </div>
-                <p class="tasks" draggable="true">Task 1 in lists</p>
-                <p class="tasks" draggable="true">Task 2 in lists vbbfdbdfbd</p>
-                <p class="tasks" draggable="true">Task 3 in lists</p>
-                <p class="tasks" draggable="true">Task 3 in lists</p>
-            </div>
-
-            <div class="inputbox">
-                <input  id="todo_input" type="text"  placeholder="Enter Task">
-                <button id="todo_add" class="todo_addItems" type="button" >+</button>
-            </div>
+      <div class="container">
+        <div class="todo_items" id="todo_list">
+          <div class="box_title todo_title">
+            TODO
+            <span id="todo_count" class="count">0</span>
+          </div>
         </div>
 
-        <div class="container">
-            <div id="progress" class="todo_items">
-                <div class="box_title todo_title"> IN PROGRESS 
-                    <span id="progress_count" class="count">0</span>
-                </div>
-                 <p class="tasks" draggable="true">Task 1 in progress</p>
-                 <p class="tasks" draggable="true">Task 2 in progress</p>
-                 <p class="tasks" draggable="true">Task 2 in progress</p>
-            </div>
-            <div class="inputbox">
-                <input type="text" id="p_input" placeholder="Enter Task">
-                <button id="p_add" class="todo_addItems" type="button" >+</button>
-            </div>
+        <div class="inputbox">
+          <input id="todo_input" type="text" placeholder="Enter Task" />
+          <button id="todo_add" class="todo_addItems" type="button">+</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="progress" class="todo_items">
+          <div class="box_title todo_title">
+            IN PROGRESS
+            <span id="progress_count" class="count">0</span>
+          </div>
+        </div>
+        <div class="inputbox">
+          <input type="text" id="p_input" placeholder="Enter Task" />
+          <button id="p_add" class="todo_addItems" type="button">+</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="done" class="todo_items">
+          <div class="box_title todo_title">
+            DONE
+            <span id="done_count" class="count">0</span>
+          </div>
         </div>
 
-
-        <div class="container">
-            <div id="done" class="todo_items">
-                <div class="box_title todo_title"> DONE
-                    <span id="done_count" class="count">0</span>
-                </div>
-                <p class="tasks" draggable="true">Task 1 in done</p>
-                <p class="tasks" draggable="true">Task 2 in done</p>
-                <p class="tasks" draggable="true">Task 3 in done</p>
-            </div>
-
-            <div class="inputbox">
-                <input type="text" id="done_input" placeholder="Enter Task">
-                <button class="todo_addItems" type="button" id="done_add">+</button>
-            </div>
+        <div class="inputbox">
+          <input type="text" id="done_input" placeholder="Enter Task" />
+          <button class="todo_addItems" type="button" id="done_add">+</button>
         </div>
+      </div>
     </div>
-<!-- <script src="gpt.js"></script> -->
+    <!-- <script src="gpt.js"></script> -->
     <script src="util.js"></script>
     <script src="script.js"></script>
     <script src="add.js"></script>
     <script>
-        // Function to update the count for a specific container
-        function updateCount(containerId) {
-            const container = document.getElementById(containerId);
-            const tasks = container.getElementsByClassName("tasks");
-            const countElement = container.querySelector(".count");
-            countElement.textContent = tasks.length;
-        }
-    
-        // Add event listeners to input boxes for each container
-        document.getElementById("todo_add").addEventListener("click", function() {
-            const todoInput = document.getElementById("todo_input");
-            const taskText = todoInput.value;
-            if (taskText) {
-                const todoList = document.getElementById("todo_list");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                todoList.appendChild(newTask);
-                todoInput.value = "";
-                updateCount("todo_list"); // Update the count for the "todo_list" container
-            }
-        });
-    
-        document.getElementById("p_add").addEventListener("click", function() {
-            const pInput = document.getElementById("p_input");
-            const taskText = pInput.value;
-            if (taskText) {
-                const progressList = document.getElementById("progress");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                progressList.appendChild(newTask);
-                pInput.value = "";
-                updateCount("progress"); // Update the count for the "progress" container
-            }
-        });
-    
-        document.getElementById("done_add").addEventListener("click", function() {
-            const doneInput = document.getElementById("done_input");
-            const taskText = doneInput.value;
-            if (taskText) {
-                const doneList = document.getElementById("done");
-                const newTask = document.createElement("p");
-                newTask.className = "tasks";
-                newTask.draggable = true;
-                newTask.textContent = taskText;
-                doneList.appendChild(newTask);
-                doneInput.value = "";
-                updateCount("done"); // Update the count for the "done" container
-            }
-        });
-    </script>
-</body>
+      // Function to update the count for a specific container
+      function updateCount(containerId) {
+        const container = document.getElementById(containerId);
+        const tasks = container.getElementsByClassName("tasks");
+        const countElement = container.querySelector(".count");
+        countElement.textContent = tasks.length;
+      }
 
+      function initData() {
+        const doneTexts = JSON.parse(localStorage.getItem("done"));
+        const progressTexts = JSON.parse(localStorage.getItem("progress"));
+        const todoTexts = JSON.parse(localStorage.getItem("todo"));
+        const doneList = document.querySelector("#done");
+        const todoList = document.querySelector("#todo_list");
+        const progressList = document.querySelector("#progress");
+
+        for (const text of doneTexts) {
+          addTaskToContainer(doneList, text);
+        }
+
+        for (const text of todoTexts) {
+          addTaskToContainer(todoList, text);
+        }
+        for (const text of progressTexts) {
+          addTaskToContainer(progressList, text);
+        }
+      }
+
+      initData();
+
+      // // Add event listeners to input boxes for each container
+      // document.getElementById("todo_add").addEventListener("click", function() {
+      //     const todoInput = document.getElementById("todo_input");
+      //     const taskText = todoInput.value;
+      //     if (taskText) {
+      //         const todoList = document.getElementById("todo_list");
+      //         const newTask = document.createElement("p");
+      //         newTask.className = "tasks";
+      //         newTask.draggable = true;
+      //         newTask.textContent = taskText;
+      //         todoList.appendChild(newTask);
+      //         todoInput.value = "";
+      //         updateCount("todo_list"); // Update the count for the "todo_list" container
+      //     }
+      // });
+
+      // document.getElementById("p_add").addEventListener("click", function() {
+      //     const pInput = document.getElementById("p_input");
+      //     const taskText = pInput.value;
+      //     if (taskText) {
+      //         const progressList = document.getElementById("progress");
+      //         const newTask = document.createElement("p");
+      //         newTask.className = "tasks";
+      //         newTask.draggable = true;
+      //         newTask.textContent = taskText;
+      //         progressList.appendChild(newTask);
+      //         pInput.value = "";
+      //         updateCount("progress"); // Update the count for the "progress" container
+      //     }
+      // });
+
+      // document.getElementById("done_add").addEventListener("click", function() {
+      //     const doneInput = document.getElementById("done_input");
+      //     const taskText = doneInput.value;
+      //     if (taskText) {
+      //         const doneList = document.getElementById("done");
+      //         const newTask = document.createElement("p");
+      //         newTask.className = "tasks";
+      //         newTask.draggable = true;
+      //         newTask.textContent = taskText;
+      //         doneList.appendChild(newTask);
+      //         doneInput.value = "";
+      //         updateCount("done"); // Update the count for the "done" container
+      //     }
+      // });
+    </script>
+  </body>
 </html>

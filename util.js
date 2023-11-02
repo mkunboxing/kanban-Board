@@ -19,17 +19,21 @@ function addNewTask(btn, input, todoContainer) {
         if (!value) {
             return;
         }
-        const p = document.createElement("p");
-        p.setAttribute('draggable', 'true');
-        p.classList.add("tasks");
-        p.innerText = value;
-        attachDragListner(p);
-        todoContainer.appendChild(p);
+        addTaskToContainer(todoContainer, value);
+        updateToLocalStorage();
         input.value = "";
-        updateCount(todoContainer.id);
         e.preventDefault();
-
     })
+}
+
+function addTaskToContainer(container, value) {
+    const p = document.createElement("p");
+    p.setAttribute('draggable', 'true');
+    p.classList.add("tasks");
+    p.innerText = value;
+    attachDragListner(p);
+    container.appendChild(p);
+    updateCount(container.id);
 }
 //   // Function to update the count for a specific container
 //   function updateCount(containerId) {

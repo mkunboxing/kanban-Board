@@ -3,7 +3,6 @@ function todo() {
     const input = document.getElementById("todo_input");
     const Container = document.getElementById("todo_list");
     addNewTask(btn, input, Container);
-    return todo;
 }
 todo();
 
@@ -12,7 +11,6 @@ function p() {
     const input = document.getElementById("p_input");
     const Container = document.getElementById("progress");
     addNewTask(btn, input, Container);
-    return p;
 }
 p();
 
@@ -21,6 +19,5 @@ function done() {
     const input = document.getElementById("done_input");
     const Container = document.getElementById("done");
     addNewTask(btn, input, Container);
-    return done();
 }
 done();
